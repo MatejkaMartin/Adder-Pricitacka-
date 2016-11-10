@@ -40,20 +40,20 @@ class ViewController: UIViewController {
     
     
 
-    @IBAction func zmacknutiPlay(sender: UIButton) {
+    @IBAction func zmacknutiPlay(_ sender: UIButton) {
         
         
         
        if pocetNavyseni.text != nil && pocetNavyseni.text != "" {
         navyseni = Int(pocetNavyseni.text!)!
-        playBtn.hidden = true
-        nazevHry.hidden = true
-        pocetNavyseni.hidden = true
+        playBtn.isHidden = true
+        nazevHry.isHidden = true
+        pocetNavyseni.isHidden = true
         
         
-        prictiBtn.hidden = false
-        vypocet.hidden = false
-        restartBtn.hidden = false
+        prictiBtn.isHidden = false
+        vypocet.isHidden = false
+        restartBtn.isHidden = false
         updateVysledek()
         
        }
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func pricti(sender: UIButton) {
+    @IBAction func pricti(_ sender: UIButton) {
         aktualniCislo = aktualniCislo + navyseni
         updateVysledek()
         
@@ -70,19 +70,19 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func restartBtn(sender: AnyObject) {
+    @IBAction func restartBtn(_ sender: AnyObject) {
         restartGame()
         
     }
     
     func restartGame(){
-        prictiBtn.hidden = true
-        vypocet.hidden = true
-        restartBtn.hidden = true
+        prictiBtn.isHidden = true
+        vypocet.isHidden = true
+        restartBtn.isHidden = true
         
-        playBtn.hidden = false
-        nazevHry.hidden = false
-        pocetNavyseni.hidden = false
+        playBtn.isHidden = false
+        nazevHry.isHidden = false
+        pocetNavyseni.isHidden = false
         
         pocetNavyseni.text = ""
         aktualniCislo = 0
